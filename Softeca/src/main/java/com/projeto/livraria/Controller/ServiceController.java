@@ -88,7 +88,7 @@ public class ServiceController {
 	 * */
 	@GET
 	@Produces("application/json; charset=UTF-8")
-	@Path("/todasPessoas")
+	@Path("/todosUsuarios")
 	public List<Usuario> TodosUsuarios(){
  
 		List<Usuario> usuarios =  new ArrayList<Usuario>();
@@ -108,7 +108,7 @@ public class ServiceController {
 	 * */
 	@GET
 	@Produces("application/json; charset=UTF-8")
-	@Path("/getPessoa/{codigo}")
+	@Path("/getUsuario/{id}")
 	public Usuario GetUsuario(@PathParam("id") Integer id){
  
 		UsuarioEntity entity = repository.GetUsuario(id);
@@ -124,7 +124,7 @@ public class ServiceController {
 	 * */
 	@DELETE
 	@Produces("application/json; charset=UTF-8")
-	@Path("/excluir/{codigo}")	
+	@Path("/excluir/{id}")	
 	public String Excluir(@PathParam("id") Integer id){
  
 		try {

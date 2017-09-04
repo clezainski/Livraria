@@ -8,7 +8,7 @@
   <name>Softeca Maven Webapp</name>
   <url>http://maven.apache.org</url>
   
-  <repositories>
+       <repositories>
   	<repository>
     	<id>snapshot-repository.java.net</id>
     	<name>Java.net Snapshot Repository for Maven</name>
@@ -20,9 +20,9 @@
   <properties>
     <jersey.version>2.22.1</jersey.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
- </properties>  
-  
-  <dependencyManagement>
+ </properties>
+ 
+ <dependencyManagement>
     <dependencies>
         <dependency>
             <groupId>org.glassfish.jersey</groupId>
@@ -33,21 +33,14 @@
         </dependency>
     </dependencies>
   </dependencyManagement>
- 
-  <dependencies>
-  	<dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
   
+  <dependencies>
     <dependency>
         <groupId>javax.servlet</groupId>
         <artifactId>servlet-api</artifactId>
         <version>2.4</version>
     </dependency>
- 
+    
     <dependency>
         <groupId>org.glassfish.jersey.ext</groupId>
         <artifactId>jersey-mvc-jsp</artifactId>
@@ -58,7 +51,7 @@
         <artifactId>jstl</artifactId>
         <version>1.2</version>
     </dependency>
- 
+    
     <dependency>
         <groupId>org.glassfish.jersey.containers</groupId>
         <artifactId>jersey-container-servlet-core</artifactId>
@@ -69,13 +62,8 @@
         <artifactId>javax.ws.rs-api</artifactId>
         <version>2.0.1</version>
     </dependency>
- 
+    
     <dependency>
-        <groupId>org.glassfish.jersey.media</groupId>
-        <artifactId>jersey-media-moxy</artifactId>
-    </dependency>
- 
-	<dependency>
    		<groupId>org.hibernate</groupId>
    		<artifactId>hibernate-core</artifactId>
    		<version>5.1.0.Final</version>
@@ -86,18 +74,16 @@
 		<artifactId>hibernate-entitymanager</artifactId>
 		<version>5.1.0.Final</version>
 	</dependency>
- 
- 
-    <dependency>
+	
+	 <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>5.1.37</version>
     </dependency>
+    </dependencies>
  
-  </dependencies>
-  
   <build>
-    <finalName>Softeca</finalName>
+    <finalName>WebServices</finalName>
     <plugins>
 	    <plugin>
 	       <artifactId>maven-compiler-plugin</artifactId>

@@ -17,7 +17,7 @@ public class UsuarioRepository {
 	public UsuarioRepository(){
 		
 		/*CRIANDO O NOSSO EntityManagerFactory COM AS PORPRIEDADOS DO ARQUIVO persistence.xml */
-		this.entityManagerFactory = Persistence.createEntityManagerFactory("persistence_unit_db_estudo");
+		this.entityManagerFactory = Persistence.createEntityManagerFactory("persistence_unit_db_softeca");
  
 		this.entityManager = this.entityManagerFactory.createEntityManager();
 	}
@@ -45,7 +45,7 @@ public class UsuarioRepository {
 	@SuppressWarnings("unchecked")
 	public List<UsuarioEntity> TodosUsuarios(){
  
-		return this.entityManager.createQuery("SELECT u FROM UsuarioEntity u ORDER BY p.nome").getResultList();
+		return this.entityManager.createQuery("SELECT u FROM UsuarioEntity u ORDER BY u.nome").getResultList();
 	}
  
 	/**
