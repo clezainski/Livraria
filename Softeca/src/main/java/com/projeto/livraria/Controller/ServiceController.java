@@ -25,7 +25,7 @@ public class ServiceController {
 	 * @Consumes - determina o formato dos dados que vamos postar
 	 * @Produces - determina o formato dos dados que vamos retornar
 	 * 
-	 * Esse método cadastra uma nova pessoa
+	 * Esse método cadastra um novo usuário
 	 * */
 	@POST	
 	@Consumes("application/json; charset=UTF-8")

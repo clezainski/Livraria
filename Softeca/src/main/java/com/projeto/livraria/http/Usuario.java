@@ -5,7 +5,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 public class Usuario {
 	
-	private int id;
+	private Integer id;
 	
 	private String  nome;
 	
@@ -23,6 +23,7 @@ public class Usuario {
 		super();
 		this.id = id;
 		this.nome = nome;
+		this.sobrenome = sobrenome;
 		this.cpf = cpf;
 		this.data_nascimento = data_nascimento;
 	}
