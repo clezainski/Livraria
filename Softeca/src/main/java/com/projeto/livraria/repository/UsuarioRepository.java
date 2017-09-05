@@ -67,7 +67,6 @@ public class UsuarioRepository {
 		this.entityManager.remove(usuario);
 		this.entityManager.getTransaction().commit();
  
-	}
- 
+	} 
 
 }

@@ -2,7 +2,7 @@ package com.projeto.livraria.Controller;
 
 import java.util.ArrayList;
 import java.util.List;
- 
+
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
@@ -16,21 +16,16 @@ import com.projeto.livraria.http.Usuario;
 import com.projeto.livraria.repository.UsuarioRepository;
 import com.projeto.livraria.repository.entity.UsuarioEntity;
 
-@Path("/service")
-public class ServiceController {
-	
-	private final  UsuarioRepository repository = new UsuarioRepository();
+@Path("servicos/user")
+public class UsuarioController {
+
+	private final  UsuarioRepository user_repository = new UsuarioRepository();
 	 
-	/**
-	 * @Consumes - determina o formato dos dados que vamos postar
-	 * @Produces - determina o formato dos dados que vamos retornar
-	 * 
-	 * Esse método cadastra um novo usuário
-	 * */
+	
 	@POST	
 	@Consumes("application/json; charset=UTF-8")
 	@Produces("application/json; charset=UTF-8")
-	@Path("/cadastrar")
+	@Path("/add")
 	public String Cadastrar(Usuario usuario){
  
 		UsuarioEntity entity = new UsuarioEntity();
@@ -42,24 +37,21 @@ public class ServiceController {
 			entity.setCpf(usuario.getCpf());
 			entity.setData_nascimento(usuario.getData_nascimento());
  
-			repository.Salvar(entity);
+			user_repository.Salvar(entity);
  
 			return "Usuário cadastrado com sucesso!";
  
 		} catch (Exception e) {
  
 			return "Erro ao cadastrar usuário." + e.getMessage();
-		}
- 
+		} 
 	}
  
-	/**
-	 * Essse método altera uma pessoa já cadastrada
-	 * **/
+
 	@PUT
 	@Produces("application/json; charset=UTF-8")
 	@Consumes("application/json; charset=UTF-8")	
-	@Path("/alterar")
+	@Path("/change")
 	public String Alterar(Usuario usuario){
  
 		UsuarioEntity entity = new UsuarioEntity();
@@ -72,28 +64,24 @@ public class ServiceController {
 			entity.setCpf(usuario.getCpf());
 			entity.setData_nascimento(usuario.getData_nascimento());
  
-			repository.Alterar(entity);
+			user_repository.Alterar(entity);
  
 			return "Usuario alterado com sucesso!";
  
 		} catch (Exception e) {
  
-			return "Erro ao alterar o usuario." + e.getMessage();
- 
-		}
- 
+			return "Erro ao alterar o usuario." + e.getMessage(); 
+		} 
 	}
-	/**
-	 * Esse método lista todas pessoas cadastradas na base
-	 * */
+
 	@GET
 	@Produces("application/json; charset=UTF-8")
-	@Path("/todosUsuarios")
+	@Path("/allUsers")
 	public List<Usuario> TodosUsuarios(){
  
 		List<Usuario> usuarios =  new ArrayList<Usuario>();
  
-		List<UsuarioEntity> listaEntityUsuarios = repository.TodosUsuarios();
+		List<UsuarioEntity> listaEntityUsuarios = user_repository.TodosUsuarios();
  
 		for (UsuarioEntity entity : listaEntityUsuarios) {
  
@@ -111,7 +99,7 @@ public class ServiceController {
 	@Path("/getUsuario/{id}")
 	public Usuario GetUsuario(@PathParam("id") Integer id){
  
-		UsuarioEntity entity = repository.GetUsuario(id);
+		UsuarioEntity entity = user_repository.GetUsuario(id);
  
 		if(entity != null)
 			return new Usuario (entity.getId(),entity.getNome(),entity.getSobrenome(),entity.getCpf(),entity.getData_nascimento());
@@ -119,25 +107,21 @@ public class ServiceController {
 		return null;
 	}
  
-	/**
-	 * Excluindo uma pessoa pelo código
-	 * */
+
 	@DELETE
 	@Produces("application/json; charset=UTF-8")
-	@Path("/excluir/{id}")	
+	@Path("/delete/{id}")	
 	public String Excluir(@PathParam("id") Integer id){
  
 		try {
  
-			repository.Excluir(id);
+			user_repository.Excluir(id);
  
 			return "Usuário excluido com sucesso!";
  
 		} catch (Exception e) {
  
 			return "Erro ao excluir o usuário. " + e.getMessage();
-		}
- 
+		} 
 	}
-
 }
