@@ -76,7 +76,7 @@ public class UsuarioController {
 
 	@GET
 	@Produces("application/json; charset=UTF-8")
-	@Path("/todos_usuarios")
+	@Path("/todos")
 	public List<Usuario> TodosUsuarios(){
  
 		List<Usuario> usuarios =  new ArrayList<Usuario>();

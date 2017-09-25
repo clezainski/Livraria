@@ -78,7 +78,7 @@ public class LivroController {
 	
 	@GET
 	@Produces("application/json; charset=UTF-8")
-	@Path("/todos_livros")
+	@Path("/todos")
 	public List<Livro> TodosLivros(){
  
 		List<Livro> livros =  new ArrayList<Livro>();
