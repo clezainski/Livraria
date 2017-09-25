@@ -8,10 +8,10 @@ import javax.persistence.Table;
 @Table(name="tb_bibliotecario")
 public class BibliotecarioEntity extends UsuarioEntity {
 
-	@Column(name="Matricula")	
+	@Column(name="matricula")	
 	private int  matricula;
 	
-	@Column(name="Senha")	
+	@Column(name="senha")	
 	private String  senha;
 
 	public int getMatricula() {

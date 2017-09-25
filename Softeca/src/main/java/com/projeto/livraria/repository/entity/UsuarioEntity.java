@@ -16,16 +16,16 @@ public class UsuarioEntity {
 	@Column(name="id")
 	private Integer id;
 	
-	@Column(name="Nome")	
+	@Column(name="nome")	
 	private String  nome;
 	
-	@Column(name="Sobrenome")	
+	@Column(name="sobrenome")	
 	private String  sobrenome;
  
-	@Column(name="CPF")
+	@Column(name="cpf")
 	private String  cpf;	
  
-	@Column(name="Data_Nascimento")
+	@Column(name="data_nascimento")
 	private String  data_nascimento;
 
 	public Integer getId() {

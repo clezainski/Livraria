@@ -37,7 +37,7 @@ public class BibliotecarioController {
 			entity.setMatricula(biblio.getMatricula());
 			entity.setSenha(biblio.getSenha());
  
-			biblio_repository.Save(entity);
+			biblio_repository.Salvar(entity);
  
 			return "Bibliotecario cadastrado com sucesso!";
  
@@ -51,7 +51,7 @@ public class BibliotecarioController {
 	@PUT
 	@Produces("application/json; charset=UTF-8")
 	@Consumes("application/json; charset=UTF-8")	
-	@Path("/change")
+	@Path("/alterar")
 	public String Alterar(Bibliotecario biblio){
  
 		BibliotecarioEntity entity = new BibliotecarioEntity();
@@ -66,7 +66,7 @@ public class BibliotecarioController {
 			entity.setMatricula(biblio.getMatricula());
 			entity.setSenha(biblio.getSenha());
  
-			biblio_repository.Save(entity);
+			biblio_repository.Alterar(entity);
  
 			return "Bibliotecario alterado com sucesso!";
  
@@ -80,7 +80,7 @@ public class BibliotecarioController {
 	
 	@GET
 	@Produces("application/json; charset=UTF-8")
-	@Path("/allBiblio")
+	@Path("/todosbiblio")
 	public List<Bibliotecario> TodosBiblios(){
  
 		List<Bibliotecario> biblios =  new ArrayList<Bibliotecario>();
@@ -101,7 +101,7 @@ public class BibliotecarioController {
 	@Path("/getBiblio/{id}")
 	public Bibliotecario GetBiblio(@PathParam("id") Integer id){
  
-		BibliotecarioEntity entity = biblio_repository.GetBiblio(id);
+		BibliotecarioEntity entity = biblio_repository.GetBibliotecario(id);
  
 		if(entity != null)
 			return new Bibliotecario(entity.getId(),entity.getNome(),entity.getSobrenome(),

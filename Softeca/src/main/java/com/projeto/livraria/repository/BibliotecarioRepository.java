@@ -19,14 +19,14 @@ public class BibliotecarioRepository {
 		this.entityManager = this.entityManagerFactory.createEntityManager();
 	}
 	
-	public void Save(BibliotecarioEntity bibliotecarioEntity){
+	public void Salvar(BibliotecarioEntity bibliotecarioEntity){
 		 
 		this.entityManager.getTransaction().begin();
 		this.entityManager.persist(bibliotecarioEntity);
 		this.entityManager.getTransaction().commit();
 	}
 	
-	public void Change(UsuarioEntity usuarioEntity){
+	public void Alterar(UsuarioEntity usuarioEntity){
 		 
 		this.entityManager.getTransaction().begin();
 		this.entityManager.merge(usuarioEntity);
@@ -39,14 +39,14 @@ public class BibliotecarioRepository {
 		return this.entityManager.createQuery("SELECT b FROM BibliotecarioEntity b ORDER BY b.nome").getResultList();
 	}
  
-	public BibliotecarioEntity GetBiblio(Integer id){
+	public BibliotecarioEntity GetBibliotecario(Integer id){
  
 		return this.entityManager.find(BibliotecarioEntity.class, id);
 	}
  
 	public void Excluir(Integer id){
  
-		BibliotecarioEntity biblio = this.GetBiblio(id);
+		BibliotecarioEntity biblio = this.GetBibliotecario(id);
  
 		this.entityManager.getTransaction().begin();
 		this.entityManager.remove(biblio);
