@@ -80,7 +80,7 @@ public class BibliotecarioController {
 	
 	@GET
 	@Produces("application/json; charset=UTF-8")
-	@Path("/todosbiblio")
+	@Path("/todos_biblio")
 	public List<Bibliotecario> TodosBiblios(){
  
 		List<Bibliotecario> biblios =  new ArrayList<Bibliotecario>();

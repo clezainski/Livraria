@@ -51,7 +51,7 @@ public class UsuarioController {
 	@PUT
 	@Produces("application/json; charset=UTF-8")
 	@Consumes("application/json; charset=UTF-8")	
-	@Path("/change")
+	@Path("/alterar")
 	public String Alterar(Usuario usuario){
  
 		UsuarioEntity entity = new UsuarioEntity();
@@ -76,7 +76,7 @@ public class UsuarioController {
 
 	@GET
 	@Produces("application/json; charset=UTF-8")
-	@Path("/allUsers")
+	@Path("/todos_usuarios")
 	public List<Usuario> TodosUsuarios(){
  
 		List<Usuario> usuarios =  new ArrayList<Usuario>();
