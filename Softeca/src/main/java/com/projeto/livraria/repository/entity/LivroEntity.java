@@ -1,7 +1,5 @@
 package com.projeto.livraria.repository.entity;
 
-import java.util.List;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,7 +7,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import com.projeto.livraria.http.Genero;
 
 @Entity
 @Table(name="tb_livro")
@@ -26,14 +23,14 @@ public class LivroEntity {
 	@Column(name="subtitulo")
 	private String subtitulo;
 	
-	@Column(name="autores")
-	private List<String> autores;
+	@Column(name="autor")
+	private String autor;
 	
 	@Column(name="isbn")
 	private String isbn;
 	
 	@Column(name="genero")
-	private Genero genero;
+	private String genero;
 
 	public Integer getId() {
 		return id;
@@ -59,12 +56,12 @@ public class LivroEntity {
 		this.subtitulo = subtitulo;
 	}
 
-	public List<String> getAutores() {
-		return autores;
+	public String getAutor() {
+		return autor;
 	}
 
-	public void setAutores(List<String> autores) {
-		this.autores = autores;
+	public void setAutor(String autor) {
+		this.autor = autor;
 	}
 
 	public String getIsbn() {
@@ -75,12 +72,12 @@ public class LivroEntity {
 		this.isbn = isbn;
 	}
 
-	public Genero getGenero() {
+	public String getGenero() {
 		return genero;
 	}
 
-	public void setGenero(Genero genero) {
+	public void setGenero(String genero) {
 		this.genero = genero;
-	}
+	}	
 	
 }

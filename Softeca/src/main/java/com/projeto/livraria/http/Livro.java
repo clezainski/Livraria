@@ -1,24 +1,22 @@
 package com.projeto.livraria.http;
 
-import java.util.List;
-
 public class Livro {
 
 	private Integer id;
 	private String titulo;
 	private String subtitulo;
-	private List<String> autores;
+	private String autor;
 	private String isbn;
-	private Genero genero;
+	private String genero;
 	
 	public Livro() {
 		
 	}
 	
-	public Livro (Integer id, String titulo, String subtitulo, List<String> autores, String isbn, Genero genero) {
+	public Livro (Integer id, String titulo, String subtitulo, String autor, String isbn, String genero) {
 		this.id = id;
 		this.genero = genero;
-		this.autores = autores;
+		this.autor = autor;
 		this.isbn = isbn;
 		this.titulo = titulo;
 		this.subtitulo = subtitulo;
@@ -48,12 +46,12 @@ public class Livro {
 		this.subtitulo = subtitulo;
 	}
 
-	public List<String> getAutores() {
-		return autores;
+	public String getAutor() {
+		return autor;
 	}
 
-	public void setAutores(List<String> autores) {
-		this.autores = autores;
+	public void setAutores(String autor) {
+		this.autor = autor;
 	}
 
 	public String getIsbn() {
@@ -64,11 +62,11 @@ public class Livro {
 		this.isbn = isbn;
 	}
 
-	public Genero getGenero() {
+	public String getGenero() {
 		return genero;
 	}
 
-	public void setGenero(Genero genero) {
+	public void setGenero(String genero) {
 		this.genero = genero;
 	}	
 }

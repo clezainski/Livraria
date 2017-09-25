@@ -33,7 +33,7 @@ public class LivroController {
 		try { 
 			entity.setTitulo(livro.getTitulo());
 			entity.setSubtitulo(livro.getSubtitulo());
-			entity.setAutores(livro.getAutores());
+			entity.setAutor(livro.getAutor());
 			entity.setIsbn(livro.getIsbn());
 			entity.setGenero(livro.getGenero());
 			 
@@ -60,7 +60,7 @@ public class LivroController {
  
 			entity.setTitulo(livro.getTitulo());
 			entity.setSubtitulo(livro.getSubtitulo());
-			entity.setAutores(livro.getAutores());
+			entity.setAutor(livro.getAutor());
 			entity.setIsbn(livro.getIsbn());
 			entity.setGenero(livro.getGenero());
  
@@ -88,7 +88,7 @@ public class LivroController {
 		for (LivroEntity entity : listaEntityLivros) {
  
 			livros.add(new Livro(entity.getId(),entity.getTitulo(),entity.getSubtitulo(),
-					entity.getAutores(),entity.getIsbn(), entity.getGenero()));
+					entity.getAutor(),entity.getIsbn(), entity.getGenero()));
 		}
  
 		return livros;
@@ -103,7 +103,7 @@ public class LivroController {
  
 		if(entity != null)
 			return new Livro(entity.getId(),entity.getTitulo(),entity.getSubtitulo(),
-					entity.getAutores(),entity.getIsbn(), entity.getGenero());
+					entity.getAutor(),entity.getIsbn(), entity.getGenero());
  
 		return null;
 	}
